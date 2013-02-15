@@ -3,12 +3,12 @@ function calculate() {
   var result;
   var original = document.getElementById("original");
   var temp = original.value;
-  var regexp = /([0-9\.]+?.+(c|C|))/;
+  var regexp = /(^-?[0-9\.]+?.+(c|C|))/;
   
   var m = String(temp.match(regexp));
 
   if (m) {
-    var num = m.match(/[0-9\.]+/);
+    var num = m.match(/^-?[0-9\.]+/);
     var type = m.match(/[a-z]|[A-Z]/);
     converted.innerHTML = type;
     num = parseFloat(num);
